@@ -7,18 +7,19 @@ class CardList  extends Component {
 
 	constructor(props) {
 			super(props);
-      this.robots = props.robots
 
 		}
 
   render(){
-    const cardComponent = this.robots.map((user, index) =>
+
+    console.log(this.props.robots)
+    const cardComponent = this.props.robots.map((user, index) =>
        <Card
          key={index}
-         id={ this.robots[index].id }
-         name={ this.robots[index].name }
-         username={ this.robots[index].name }
-         email={ this.robots[index].email }
+         id={ this.props.robots[index].id }
+         name={ this.props.robots[index].name }
+         username={ this.props.robots[index].name }
+         email={ this.props.robots[index].email }
          />
       )
 
