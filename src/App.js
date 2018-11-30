@@ -28,19 +28,22 @@ class App extends Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => { return response.json() })
       .then(users=> {
-        this.setState({ "filteredRobots": users});
+        this.setState({
+         "robots": users,
+          "filteredRobots": users
+        });
       });
 
   }
 
   render() {
-      return (
-        <div className='tc'>
-          <h1 className='f1'> RoboFriend </h1>
-          <SearchBox SearchChange={this.onSearchChange} />
-          <CardList robots={this.state.filteredRobots} />
-       </div>
-      )
+    return (
+      <div className='tc'>
+        <h1 className='f1'> RoboFriend </h1>
+        <SearchBox SearchChange={this.onSearchChange} />
+        <CardList robots={this.state.filteredRobots} />
+     </div>
+    )
   }
 }
 
